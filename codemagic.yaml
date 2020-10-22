@@ -15,7 +15,6 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
       - keychain initialize
       - app-store-connect fetch-signing-files "com.codemagic.yamlmanualdevelopment" --type IOS_APP_DEVELOPMENT
