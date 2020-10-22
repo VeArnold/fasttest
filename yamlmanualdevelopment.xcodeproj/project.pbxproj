@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD4F5BD3824050F7C16808FF /* Pods_yamlmanualdevelopment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348886E0037A8C313D03B7C7 /* Pods_yamlmanualdevelopment.framework */; };
 		CE1060AD254175390049132C /* yamlmanualdevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1060AC254175390049132C /* yamlmanualdevelopmentApp.swift */; };
 		CE1060AF254175390049132C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1060AE254175390049132C /* ContentView.swift */; };
 		CE1060B12541753A0049132C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1060B02541753A0049132C /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CE1D1A9128FB515C4DF563A /* Pods-yamlmanualdevelopment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamlmanualdevelopment.debug.xcconfig"; path = "Target Support Files/Pods-yamlmanualdevelopment/Pods-yamlmanualdevelopment.debug.xcconfig"; sourceTree = "<group>"; };
+		2449526091778F4A26FAED11 /* Pods-yamlmanualdevelopment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamlmanualdevelopment.release.xcconfig"; path = "Target Support Files/Pods-yamlmanualdevelopment/Pods-yamlmanualdevelopment.release.xcconfig"; sourceTree = "<group>"; };
+		348886E0037A8C313D03B7C7 /* Pods_yamlmanualdevelopment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamlmanualdevelopment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1060A9254175390049132C /* yamlmanualdevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamlmanualdevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1060AC254175390049132C /* yamlmanualdevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamlmanualdevelopmentApp.swift; sourceTree = "<group>"; };
 		CE1060AE254175390049132C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,17 +31,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD4F5BD3824050F7C16808FF /* Pods_yamlmanualdevelopment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A89857A96B7A49CA39D65D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				348886E0037A8C313D03B7C7 /* Pods_yamlmanualdevelopment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B48183D8CB8038ED4CD7A594 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CE1D1A9128FB515C4DF563A /* Pods-yamlmanualdevelopment.debug.xcconfig */,
+				2449526091778F4A26FAED11 /* Pods-yamlmanualdevelopment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE1060A0254175390049132C = {
 			isa = PBXGroup;
 			children = (
 				CE1060AB254175390049132C /* yamlmanualdevelopment */,
 				CE1060AA254175390049132C /* Products */,
+				B48183D8CB8038ED4CD7A594 /* Pods */,
+				6A89857A96B7A49CA39D65D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1060B82541753A0049132C /* Build configuration list for PBXNativeTarget "yamlmanualdevelopment" */;
 			buildPhases = (
+				ABC8581740776E5CF554BF7D /* [CP] Check Pods Manifest.lock */,
 				CE1060A5254175390049132C /* Sources */,
 				CE1060A6254175390049132C /* Frameworks */,
 				CE1060A7254175390049132C /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ABC8581740776E5CF554BF7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yamlmanualdevelopment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE1060A5254175390049132C /* Sources */ = {
@@ -264,6 +315,7 @@
 		};
 		CE1060B92541753A0049132C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CE1D1A9128FB515C4DF563A /* Pods-yamlmanualdevelopment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +338,7 @@
 		};
 		CE1060BA2541753A0049132C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2449526091778F4A26FAED11 /* Pods-yamlmanualdevelopment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
