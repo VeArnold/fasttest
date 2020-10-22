@@ -22,5 +22,5 @@ workflows:
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
     artifacts:
-      - test789/build/ios/ipa/*.ipa
+      - /build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
