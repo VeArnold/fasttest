@@ -26,7 +26,7 @@ workflows:
         script: |
             export PROJECT_URL=https://codemagic.io/app/${FCI_PROJECT_ID}
             payload(){
-              echo '{
+
                   "content": "Welcome to Discohook, a free message and embed builder for Discord!\nThere's additional info in the embeds below, or you can use the *Clear all* button in the editor to start making embeds.\nHave questions? Discohook has a support server at.",
                   "embeds": [
                     {
@@ -73,7 +73,7 @@ workflows:
                       "color": 15746887
                     }
                   ]
-              }'
+
             }
             curl $DISCORD_HOOK \
               --header "Content-Type: application/json" \
