@@ -27,7 +27,7 @@ workflows:
       - /tmp/xcodebuild_logs/*.log
     publishing:
       scripts:
-        - name: Publish to Discord notification
+        - name: Discord Notification
           script: |
             DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u
             export PROJECT_URL=https://codemagic.io/app/${FCI_PROJECT_ID}
