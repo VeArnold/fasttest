@@ -23,8 +23,7 @@ workflows:
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
       - |
-        echo 'export BUILD_STATUS=success' >> ~/.bash_profile
-        . ~/.bash_profile
+        launchctl setenv BUILD_STATUS "success"
         echo $BUILD_STATUS
       - echo $BUILD_STATUS
     artifacts:
@@ -49,7 +48,7 @@ workflows:
 
             build_number = os.getenv('BUILD_NUMBER')
 
-            if os.getenv('FCI_BUILD_STEP_STATUS') == 'success':
+            if os.getenv('BUILD_STATUS') == 'success':
                 embed = Embed(
                     description='Build **#%s** was successful! :smiley:' % (build_number),
                     color=0x32CD32,
