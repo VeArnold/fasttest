@@ -29,9 +29,8 @@ workflows:
       scripts:
         - name: Discord Notification
           script: |
-            pip install dhooks
-            
             #!/usr/bin/env python
+            pip install dhooks
             from dhooks import Webhook, Embed
             
             hook = Webhook('https://discordapp.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u')
