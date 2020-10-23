@@ -23,7 +23,9 @@ workflows:
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
       - echo $FCI_BUILD_STEP_STATUS
-      - export FCI_BUILD_STEP_STATUS=success
+      - |
+        echo 'export FCI_BUILD_STEP_STATUS=success' >> ~/.bash_profile
+        . ~/.bash_profile
       - echo $FCI_BUILD_STEP_STATUS
     artifacts:
       - build/ios/ipa/*.ipa
