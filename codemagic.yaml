@@ -40,9 +40,9 @@ workflows:
             install("dhooks")
             from dhooks import Webhook, Embed
 
-            hook = Webhook(os.getenv(DISCORD_HOOK))
+            hook = Webhook(os.getenv('DISCORD_HOOK'))
 
-            build_number = os.getenv(BUILD_NUMBER)
+            build_number = os.getenv('BUILD_NUMBER')
 
             if os.getenv('FCI_BUILD_STEP_STATUS') == 'success':
                 embed = Embed(
