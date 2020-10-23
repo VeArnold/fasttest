@@ -45,19 +45,21 @@ workflows:
             hook = Webhook(os.getenv('DISCORD_HOOK'))
 
             build_number = os.getenv('BUILD_NUMBER')
+            build_id = os.getenv('FCI_BUILD_ID')
             commit = os.getenv('FCI_COMMIT')
             project_id = os.getenv('FCI_PROJECT_ID')
             project = 'https://codemagic.io/app/%s' % (project_id)
+            build_url = '%s/build/%s' % (project, build_id)
 
             if os.getenv('BUILD_STATUS') == 'success':
                 embed = Embed(
-                    description='Build **#%s** was successful! :smiley:' % (build_number),
+                    description='Build [#%s](%s) was successful! :smiley:' % (build_number, build_url),
                     color=0x32CD32,
                     timestamp='now'
                     )
             else:
                 embed = Embed(
-                    description='Build **#%s** failed! :open_mouth:' % (build_number),
+                    description='Build [#%s](%s) failed! :open_mouth:' % (build_number, build_url),
                     color=0xFF0000,
                     timestamp='now'
                     )
@@ -71,3 +73,33 @@ workflows:
             embed.set_thumbnail(image1)
             embed.set_image(image2)
             hook.send(embed=embed)
+        - name: Discord 2
+          script: |
+            #!/usr/bin/env python3
+            import os
+            import requests #dependency
+            import json
+            
+            url = os.getenv('DISCORD_HOOK')
+
+            data = {}
+            #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
+            data["content"] = "message content"
+            data["username"] = "custom username"
+
+            #leave this out if you dont want an embed
+            data["embeds"] = []
+            embed = {}
+            #for all params, see https://discordapp.com/developers/docs/resources/channel#embed-object
+            embed["description"] = "text in embed"
+            embed["title"] = "embed title"
+            data["embeds"].append(embed)
+
+            result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
+
+            try:
+                result.raise_for_status()
+            except requests.exceptions.HTTPError as err:
+                print(err)
+            else:
+                print("Payload delivered successfully, code {}.".format(result.status_code))
