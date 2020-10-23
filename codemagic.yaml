@@ -27,9 +27,12 @@ workflows:
             export PROJECT_URL=https://codemagic.io/app/${FCI_PROJECT_ID}
             payload(){
               echo '{
-                  "username": "Webhook",
-                  "avatar_url": "https://i.imgur.com/4M34hi2.png",
-                  "content": "Text message. Up to 2000 characters.",
+                  "content": "Hello, World!",
+                  "tts": false,
+                  "embed": {
+                    "title": "Hello, Embed!",
+                    "description": "This is an embedded message."
+                  }
               }'
             }
             curl $DISCORD_HOOK \
