@@ -1,7 +1,7 @@
 
 workflows:
-  ios:
-    name: iOS
+  test-discord:
+    name: discord publishing
     max_build_duration: 60
     environment:
       vars:
@@ -22,6 +22,9 @@ workflows:
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+      - echo $FCI_BUILD_STEP_STATUS
+      - $FCI_BUILD_STEP_STATUS: success
+      - echo $FCI_BUILD_STEP_STATUS
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
