@@ -24,14 +24,16 @@ workflows:
       - name: Webhook notification
         script: |
             payload(){
-            {
-            "content": "Hello, World!",
-            "tts": false,
-            "embed": {
-                "title": "Hello, Embed!",
-                "description": "This is an embedded message."
-            }
-            }
+              echo '{
+                {
+  "content": "Hello, World!",
+  "tts": false,
+  "embed": {
+    "title": "Hello, Embed!",
+    "description": "This is an embedded message."
+  }
+}
+                }'
             }
             curl https://discordapp.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u \
               --header "Content-Type: application/json" \
