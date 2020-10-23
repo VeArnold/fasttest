@@ -81,18 +81,22 @@ workflows:
             import json
             
             url = os.getenv('DISCORD_HOOK')
+            build_number = os.getenv('BUILD_NUMBER')
+            build_id = os.getenv('FCI_BUILD_ID')
+            commit = os.getenv('FCI_COMMIT')
+            project_id = os.getenv('FCI_PROJECT_ID')
+            project = 'https://codemagic.io/app/%s' % (project_id)
+            build_url = '%s/build/%s' % (project, build_id)
 
             data = {}
             #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
-            data["content"] = "message content"
-            data["username"] = "custom username"
-
+            data["username"] = "Codemagic"
             #leave this out if you dont want an embed
             data["embeds"] = []
             embed = {}
-            #for all params, see https://discordapp.com/developers/docs/resources/channel#embed-object
-            embed["description"] = "text in embed"
-            embed["title"] = "embed title"
+            embed["description"] = 'Build [#%s](%s) was successful! :smiley:' % (build_number, build_url)
+            embed["color"] = 0x32CD32
+            embed["timestamp" = 'now'
             data["embeds"].append(embed)
 
             result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
