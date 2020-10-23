@@ -31,8 +31,7 @@ workflows:
                    "tts": false,
                    "embed": {
                      "title": "Codemagic Results",
-                     "description": "See artifact:"
-                     "url": "'$PROJECT_URL'/build/'$FCI_BUILD_ID'"
+                     "description": "'$PROJECT_URL'/build/'$FCI_BUILD_ID'"
                     }
               }'
             }
