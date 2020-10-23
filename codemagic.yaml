@@ -29,7 +29,7 @@ workflows:
             payload(){
               echo '{
                   "project": {
-                    "name": "Lingvist Android",
+                    "name": "HEY",
                     "id": "'$FCI_PROJECT_ID'",
                     "url": "'$PROJECT_URL'"
                   },
