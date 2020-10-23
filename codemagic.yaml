@@ -31,7 +31,7 @@ workflows:
           script: |
             DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u
             export PROJECT_URL=https://codemagic.io/app/${FCI_PROJECT_ID}
-            printf '{"embed": { "title": "Hello, Embed!", "description": "This is an embedded message." }}' > discord_message.json
+            printf '{"embed": {"title": "title","description": "","color": 122676,"timestamp": "2020-10-23T19:36:32.257Z"}}' > discord_message.json
             curl $DISCORD_WEBHOOK_URL \
               --header "Content-Type: application/json" \
               --request POST \
