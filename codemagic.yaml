@@ -29,7 +29,7 @@ workflows:
       scripts:
         - name: Discord Notification
           script: |
-            #!/usr/bin/env python
+            #!/usr/bin/env python3
             import os
             import subprocess
             import sys
