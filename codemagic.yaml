@@ -22,9 +22,7 @@ workflows:
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
-      - |
-        launchctl setenv BUILD_STATUS "success"
-        echo $BUILD_STATUS
+      - launchctl setenv BUILD_STATUS "success"
       - echo $BUILD_STATUS
     artifacts:
       - build/ios/ipa/*.ipa
