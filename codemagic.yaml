@@ -21,6 +21,38 @@ workflows:
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+      - name: Webhook notification
+          script: |
+            export PROJECT_URL=https://codemagic.io/app/${FCI_PROJECT_ID}
+            export VERSION_CODE=$(grep -o "versionCode\s\+\d\+" app/build.gradle | awk '{ print $2 }')
+            export VERSION_NAME=$(awk '/versionName ".*"/{print $2}' app/build.gradle | tr -d \''"\')
+            payload(){
+              echo '{
+                  "project": {
+                    "name": "Lingvist Android",
+                    "id": "'$FCI_PROJECT_ID'",
+                    "url": "'$PROJECT_URL'"
+                  },
+                  "build": {
+                    "id": "'$FCI_BUILD_ID'",
+                    "branch": "'$FCI_BRANCH'",
+                    "number": "'$BUILD_NUMBER'",
+                    "version_code": "'$VERSION_CODE'",
+                    "version_name": "'$VERSION_NAME'",
+                    "url": "'$PROJECT_URL'/build/'$FCI_BUILD_ID'"
+                  },
+                  "commit": {
+                    "hash": "'$FCI_COMMIT'",
+                    "commit_subject": "'$(git show -s --format=%s)'",
+                    "commit_body": "'$(git show -s --format=%b)'"
+                  },
+                  "artefacts": '$FCI_ARTIFACT_LINKS'
+                }'
+            }
+            curl https://discordapp.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u \
+              --header "Content-Type: application/json" \
+              --request POST \
+              --data "$(payload)"
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
