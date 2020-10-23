@@ -45,6 +45,9 @@ workflows:
             hook = Webhook(os.getenv('DISCORD_HOOK'))
 
             build_number = os.getenv('BUILD_NUMBER')
+            commit = os.getenv('FCI_COMMIT')
+            project_id = os.getenv('FCI_PROJECT_ID)
+            project = 'https://codemagic.io/app/%s' % (project_id)
 
             if os.getenv('BUILD_STATUS') == 'success':
                 embed = Embed(
@@ -62,9 +65,9 @@ workflows:
             image1 = 'https://avatars2.githubusercontent.com/u/53334409?s=400&v=4'
             image2 = 'https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg'
             embed.set_author(name='Codemagic', icon_url=image1)
-            embed.add_field(name='Test Field', value='Value of the field :open_mouth:')
-            embed.add_field(name='Another Field', value='1234 :smile:')
-            embed.set_footer(text='Here is my footer text', icon_url=image1)
+            embed.add_field(name='Commit', value=commit)
+            embed.add_field(name='Project', value=project)
+            embed.set_footer(text='Date', icon_url=image1)
             embed.set_thumbnail(image1)
             embed.set_image(image2)
             hook.send(embed=embed)
