@@ -22,8 +22,7 @@ workflows:
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
-      - launchctl setenv BUILD_STATUS "success"
-      - echo $BUILD_STATUS
+      - echo 'export BUILD_SUCCESS=sucess' >> MY_ENV_VARS
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
@@ -31,6 +30,7 @@ workflows:
       scripts:
         - name: Discord Notification
           script: |
+            source MY_ENV_VARS
             #!/usr/bin/env python3
             import os
             import subprocess
@@ -75,6 +75,7 @@ workflows:
             hook.send(embed=embed)
         - name: Discord 2
           script: |
+            source MY_ENV_VARS
             #!/usr/bin/env python3
             import os
             import requests #dependency
