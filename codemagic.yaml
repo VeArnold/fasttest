@@ -30,7 +30,6 @@ workflows:
       scripts:
         - name: Discord Notification
           script: |
-            source MY_ENV_VARS
             #!/usr/bin/env python3
             import os
             import subprocess
