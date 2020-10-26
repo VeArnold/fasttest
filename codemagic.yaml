@@ -28,7 +28,7 @@ workflows:
       - /tmp/xcodebuild_logs/*.log
     publishing:
       scripts:
-        - name: Discord Notification
+        - name: Discord Extensive
           script: |
             source MY_ENV_VARS
             python3 - <<EOF
@@ -75,7 +75,7 @@ workflows:
             embed.set_image(image2)
             hook.send(embed=embed)
             EOF
-        - name: Discord 2
+        - name: Discord Minimal
           script: |
             source MY_ENV_VARS
             python3 - <<EOF
@@ -93,9 +93,7 @@ workflows:
             build_status = os.getenv('BUILD_STATUS')
 
             data = {}
-            #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
             data["username"] = "Codemagic"
-            #leave this out if you dont want an embed
             data["embeds"] = []
             embed = {}
 
