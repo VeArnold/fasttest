@@ -28,6 +28,25 @@ workflows:
       - /tmp/xcodebuild_logs/*.log
     publishing:
       scripts:
+        - name: Discord.sh
+          script: |
+            git clone https://github.com/ChaoticWeg/discord.sh.git
+            /discord.sh \
+             --webhook-url="$DISCORD_HOOK" \
+             --username "Codemagic" \
+             --text "Check out this embed!" \
+             --title "New Notification!" \
+             --description "This is a description\nPretty cool huh?" \
+             --color "0xFFFFFF" \
+             --url "https://github.com/ChaoticWeg/discord.sh" \
+             --author "discord.sh" \
+             --author-url "https://github.com/ChaoticWeg/discord.sh" \
+             --author-icon "https://i.imgur.com/12jyR5Q.png" \
+             --image "https://i.imgur.com/12jyR5Q.png" \
+             --thumbnail "https://i.imgur.com/12jyR5Q.png" \
+             --footer "discord.sh" \
+             --footer-icon "https://i.imgur.com/12jyR5Q.png" \
+             --timestamp
         - name: Discord Extensive
           script: |
             source MY_ENV_VARS
