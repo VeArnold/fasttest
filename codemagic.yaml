@@ -34,9 +34,9 @@ workflows:
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
               if [ $BUILD_STATUS == 'success' ]
               then
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0x32CD32" --description "Build [$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) was successful! :smiley:" --image "https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg"
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0x32CD32" --description "Build [#$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) was successful! :smiley:"
               else
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0xFF0000" --description "Build [$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) failed! :worried:" --image "https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg"
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0xFF0000" --description "Build [#$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) failed! :worried:"
               fi
 
         - name: Discord Extensive
