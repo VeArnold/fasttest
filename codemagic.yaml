@@ -81,6 +81,9 @@ workflows:
             hook.send(embed=embed)
         - name: Discord 2
           script: |
+            source MY_ENV_VARS
+            echo $VARIABLE
+            
             #!/usr/bin/env python3
             import os
             import requests #dependency
