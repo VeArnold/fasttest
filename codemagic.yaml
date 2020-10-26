@@ -32,6 +32,9 @@ workflows:
       - /tmp/xcodebuild_logs/*.log
     publishing:
       scripts:
+        - |
+          source MY_ENV_VARS
+          echo $VARIABLE
         - name: Discord Notification
           script: |
             #!/usr/bin/env python3
