@@ -30,19 +30,13 @@ workflows:
       scripts:
         - name: Discord.sh
           script: |
+            source MY_ENV_VARS
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
-            ./discord.sh \
-             --webhook-url="$DISCORD_HOOK" \
-             --description "Build $FCI_BUILD_ID was successful!" \
-             --color "0x32CD32" \
-             --author "Codemagic" \
-             --author-url "https://codemagic.io/start/" \
-             --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" \
-             --image "https://i.imgur.com/12jyR5Q.png" \
-             --thumbnail "https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg" \
-             --footer "discord.sh" \
-             --footer-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" \
-             --timestamp
+              if [$BUILD_STATUS=="success"]; then
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --message 'success' --color "0x32CD32" --author "Codemagic" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --timestamp
+              else
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --message 'failed' --color 0xFF0000" --author "Codemagic" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --timestamp
+              fi
         - name: Discord Extensive
           script: |
             source MY_ENV_VARS
