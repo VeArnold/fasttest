@@ -30,23 +30,18 @@ workflows:
       scripts:
         - name: Discord.sh
           script: |
-            git clone https://github.com/ChaoticWeg/discord.sh.git
-            cd discord.sh
+            git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
             ./discord.sh \
              --webhook-url="$DISCORD_HOOK" \
-             --username "Codemagic" \
-             --text "Check out this embed!" \
-             --title "New Notification!" \
-             --description "This is a description\nPretty cool huh?" \
-             --color "0xFFFFFF" \
-             --url "https://github.com/ChaoticWeg/discord.sh" \
-             --author "discord.sh" \
-             --author-url "https://github.com/ChaoticWeg/discord.sh" \
-             --author-icon "https://i.imgur.com/12jyR5Q.png" \
+             --description "Build $FCI_BUILD_ID was successful! :smiley:" \
+             --color "0x32CD32" \
+             --author "Codemagic" \
+             --author-url "https://codemagic.io/start/" \
+             --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" \
              --image "https://i.imgur.com/12jyR5Q.png" \
-             --thumbnail "https://i.imgur.com/12jyR5Q.png" \
+             --thumbnail "https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg" \
              --footer "discord.sh" \
-             --footer-icon "https://i.imgur.com/12jyR5Q.png" \
+             --footer-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" \
              --timestamp
         - name: Discord Extensive
           script: |
