@@ -38,6 +38,13 @@ workflows:
             print("hello world")
         - name: Hello World2
           script: |
+            source MY_ENV_VARS
+            export FOO=bar
+            python3 - <<EOF
+            import os
+            print(os.getenv("FOO"))
+            EOF
+            
             echo $VARIABLE
             #!/usr/bin/env python3
             print("hello world")
