@@ -16,16 +16,17 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - echo 'export VARIABLE=hey' >> MY_ENV_VARS
+      - |
+        source MY_ENV_VARS
+        echo $VARIABLE
       - find . -name "Podfile" -execdir pod install \;
       - keychain initialize
       - app-store-connect fetch-signing-files "com.codemagic.yamlmanualdevelopment" --type IOS_APP_DEVELOPMENT --create
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
-      - echo 'export VARIABLE=hey' >> MY_ENV_VARS
-      - |
-        source MY_ENV_VARS
-        echo $VARIABLE
+
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
