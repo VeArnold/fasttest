@@ -32,7 +32,8 @@ workflows:
           script: |
             source MY_ENV_VARS
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
-              if [$BUILD_STATUS=="success"]; then
+              if [$BUILD_STATUS=='success']
+              then
                 ./discord.sh --webhook-url "$DISCORD_HOOK" --message "success"
               else
                 ./discord.sh --webhook-url "$DISCORD_HOOK" --message "failed"
