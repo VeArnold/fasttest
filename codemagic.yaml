@@ -16,41 +16,22 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - echo 'export VARIABLE=hey' >> MY_ENV_VARS
-      - |
-        source MY_ENV_VARS
-        echo $VARIABLE
       - find . -name "Podfile" -execdir pod install \;
       - keychain initialize
       - app-store-connect fetch-signing-files "com.codemagic.yamlmanualdevelopment" --type IOS_APP_DEVELOPMENT --create
       - keychain add-certificates
       - xcode-project use-profiles
       - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
-
+      - echo 'export BUILD_STATUS=success' >> MY_ENV_VARS
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
     publishing:
       scripts:
-        - name: Hello World
-          script: |
-            #!/usr/bin/env python3
-            print("hello world")
-        - name: Hello World2
-          script: |
-            source MY_ENV_VARS
-            export FOO=bar
-            python3 - <<EOF
-            import os
-            print(os.getenv("FOO"))
-            EOF
-            
-            echo $VARIABLE
-            #!/usr/bin/env python3
-            print("hello world")
         - name: Discord Notification
           script: |
-            #!/usr/bin/env python3
+            source MY_ENV_VARS
+            python3 - <<EOF
             import os
             import subprocess
             import sys
@@ -69,6 +50,7 @@ workflows:
             project_id = os.getenv('FCI_PROJECT_ID')
             project = 'https://codemagic.io/app/%s' % (project_id)
             build_url = '%s/build/%s' % (project, build_id)
+            build_status = os.getenv('BUILD_STATUS')
 
             if os.getenv('BUILD_STATUS') == 'success':
                 embed = Embed(
@@ -78,7 +60,7 @@ workflows:
                     )
             else:
                 embed = Embed(
-                    description='Build [#%s](%s) failed! :open_mouth:' % (build_number, build_url),
+                    description='Build [#%s](%s) failed! :worried:' % (build_number, build_url),
                     color=0xFF0000,
                     timestamp='now'
                     )
@@ -92,14 +74,13 @@ workflows:
             embed.set_thumbnail(image1)
             embed.set_image(image2)
             hook.send(embed=embed)
+            EOF
         - name: Discord 2
           script: |
             source MY_ENV_VARS
-            echo $VARIABLE
-            
-            #!/usr/bin/env python3
+            python3 - <<EOF
             import os
-            import requests #dependency
+            import requests
             import json
             
             url = os.getenv('DISCORD_HOOK')
@@ -109,6 +90,7 @@ workflows:
             project_id = os.getenv('FCI_PROJECT_ID')
             project = 'https://codemagic.io/app/%s' % (project_id)
             build_url = '%s/build/%s' % (project, build_id)
+            build_status = os.getenv('BUILD_STATUS')
 
             data = {}
             #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
@@ -116,10 +98,15 @@ workflows:
             #leave this out if you dont want an embed
             data["embeds"] = []
             embed = {}
-            embed["description"] = 'Build [#%s](%s) was successful! :smiley:' % (build_number, build_url)
-            embed["color"] = 0x32CD32
-            data["embeds"].append(embed)
 
+            if build_status == "success":
+                embed["description"] = 'Build [#%s](%s) was successful! :smiley:' % (build_number, build_url)
+                embed["color"] = 0x32CD32
+            else:
+                embed["description"] = 'Build [#%s](%s) failed! :worried:' % (build_number, build_url)
+                embed["color"] = 0xFF0000
+
+            data["embeds"].append(embed)
             result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
 
             try:
@@ -128,3 +115,4 @@ workflows:
                 print(err)
             else:
                 print("Payload delivered successfully, code {}.".format(result.status_code))
+            EOF
