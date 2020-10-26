@@ -32,11 +32,11 @@ workflows:
           script: |
             source MY_ENV_VARS
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
-              if [$BUILD_STATUS=='success']
+              if [ $BUILD_STATUS == 'success' ]
               then
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --message "success"
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --author "Codemagic" --color "0x32CD32" --description "Build $FCI_BUILD_ID was successful! :smiley:" --timestamp
               else
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --message "failed"
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --author "Codemagic" --color "0xFF0000" --description "Build $FCI_BUILD_ID failed! :worried:" --timestamp
               fi
         - name: Discord Extensive
           script: |
