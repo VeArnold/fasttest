@@ -34,10 +34,18 @@ workflows:
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
               if [ $BUILD_STATUS == 'success' ]
               then
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author "Codemagic" --color "0x32CD32" --description "Build $FCI_BUILD_ID was successful! :smiley:" --timestamp
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --avatar "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0x32CD32" --description "Build [$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) was successful! :smiley:"
               else
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author "Codemagic" --color "0xFF0000" --description "Build $FCI_BUILD_ID failed! :worried:" --timestamp
+                ./discord.sh --webhook-url "$DISCORD_HOOK" --avatar "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0xFF0000" --description "Build [$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) failed! :worried:"
               fi
+            url = os.getenv('DISCORD_HOOK')
+            build_number = os.getenv('BUILD_NUMBER')
+            build_id = os.getenv('FCI_BUILD_ID')
+            commit = os.getenv('FCI_COMMIT')
+            project_id = os.getenv('FCI_PROJECT_ID')
+            project = 'https://codemagic.io/app/%s' % (project_id)
+            build_url = '%s/build/%s' % (project, build_id)
+            build_status = os.getenv('BUILD_STATUS')
         - name: Discord Extensive
           script: |
             source MY_ENV_VARS
