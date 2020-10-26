@@ -21,7 +21,7 @@ workflows:
       - app-store-connect fetch-signing-files "com.codemagic.yamlmanualdevelopment" --type IOS_APP_DEVELOPMENT --create
       - keychain add-certificates
       - xcode-project use-profiles
-      - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+      - xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --archive-xcargs=UseModernBuildSystem=0
       - echo 'export BUILD_STATUS=success' >> MY_ENV_VARS
     artifacts:
       - build/ios/ipa/*.ipa
@@ -33,7 +33,7 @@ workflows:
             git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
             ./discord.sh \
              --webhook-url="$DISCORD_HOOK" \
-             --description "Build $FCI_BUILD_ID was successful! :smiley:" \
+             --description "Build $FCI_BUILD_ID was successful!" \
              --color "0x32CD32" \
              --author "Codemagic" \
              --author-url "https://codemagic.io/start/" \
