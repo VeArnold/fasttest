@@ -31,6 +31,7 @@ workflows:
         - name: Discord.sh
           script: |
             git clone https://github.com/ChaoticWeg/discord.sh.git
+            cd discord.sh
             ./discord.sh \
              --webhook-url="$DISCORD_HOOK" \
              --username "Codemagic" \
