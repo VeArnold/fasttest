@@ -1,7 +1,7 @@
 
 workflows:
-  test-discord:
-    name: discord publishing
+  workflow_one:
+    name: Test Workflow
     max_build_duration: 60
     environment:
       vars:
@@ -11,11 +11,11 @@ workflows:
         CERTIFICATE_PRIVATE_KEY: Encrypted(Z0FBQUFBQmZrV3NleEstYm91UUFBeXFRaEFGNzdRZE9EUkJvOUc3c1lneVZJaTJTbEx6TjZtVk9iRkhWR3hFajJRd2dyRzNuOEk5V3JHS3g1ZnpuMzAwN3NYcHI5VHJfdTJheXd0UUdQYS00WHZxaFVUVXpqTENGc0g2cHBvSG9ycEIwWk82M3c5WFAyWjJxTTdYaW8zOXBESGNxajhBWkRoMUpnZks2TE95UFhUNmRLbFR6S0xUdXpBaTVFalBoMW9GU1hNeXdNLVItSWtSRkFON3dpd0RfOHAtaDY3STJNVk01N21rTVpnUEJiYmtRcDcwTEQ0V19UOElTM0Y1c2JEam9tMXc3Z1E0dXdkazlmbHkzTE9jUFJYdzVvZVVNS0xZTTI1U1J2b01WUkxJWGNwakxGZWhUSXhuNEo2VEl0T1R6QkJLNm5HaE9jTTI1eGd6M3lOMGhLcFotX0k1UkZtbmt4ZV9PQ2pHZXV6aFZUYi1KSVNMOVp3T2FUUDVwUWxlQUczMjh3WWpEUHVPVDFxWmx2THpwNDhYVXZzSmh6VkN0cnN3a05MbjBQdXExRTJUdV9CdnQ5aEEwcUhOSElOclQzUDkyYk5zdlhZcE9QVWtCLUZCc0prelJ1SFFRWlo5eWNoUVF6N3JWeU9qc0NxTEtUcDVtUl9YcEVMbURZa3IyUEgzYUJwd3dsYXBXUmMyWWFUTjkyN25YNTVxN2hfNGVuZ3RuTTNPMWZ5Xzhpdl8wQXpEMTU3Q29VTzh5VTBfTGMwVTc4REtWRktpRE9EZ2pBTVlfdVpuVzFoUlJ5NS1GQk9vbEc5bWpXSThkU0JQMEpQTHpfdkg4U0RiTTlraDd2RUlCSW9Mc0V1WFRabi1QaXI5VnBlRF9xOGgyV25SV2ZYaEtzczYzOVJnZFFRNDJuLTZwd2p4NnpJS0ljRG1Odk56YmI5NWxBZVZycTVZTjV6eXNDMC1uelNiTWlrTVFJbW9kYklhaTJsUEFHMWVSdzltX0JXSVdjUFlxbDF0My1oT1d2elplVm9Pc0tzcGVmdFpLT0FFWUgwYy1pYzhxSElBTlFneG91MDZ1TGJKU2pQTEVTaGhjQVlIckx3Nlp1R1F2VmpoeDVGLXZmbGM5anJRNENhX2xleVV3YzRwQmwyMnE2VEQxTUdLODVGS3hwN1FNRVFtdTdjeVJCaXU2bHFqSmdSMVdPdnVRRW9CdHJ5MS1IX2REaG9NbjlUTFRteE1lb0RJaGRLTVlndTlGaGp2Yk53eldCN0YzX0tQRzdFU1d6WUlBcmpXQkotU0xyWFdLY3o1TjdXaVVPbEpmbTQtZVV4YmQxbEVFWG1RMFlDU1d4LXJJaUp1VFk2b3hnRmIxMkhRTmpyQk9lUTNmeXdLUC1XMU1uTG00QXdUZWt1VHVMTE5HSTJaaWNxNEo0QzZBalBFWVloekpVc1RsVGt5a3YwMmozTHlfTGh3VExlamJVeV9HQU1QMDY3M2gwX0hWUTRXOFRBODB3R0ZDbFBtLUxxVEQ2OHEza1piV2VXWE9mV0NJYllkWjRaRFhmalA4aTM2WEsycmU3OHFuUk5YWHZra29hbXZOV0tzZHBWd3d2dUItZGUzMjBqa2VST1N1RFlSV1dvbnZOcmRsUzFkcGlsbkU2TzdjT0lZMFN4bFZrWVFXRFoxZ0k4THJVRzNwcTNpMi0yTU0yOHVEaFFvSXIxM3RsSFJDcGVNZkp4Ujh1dkxESTF6MHlXVkhkWG5VXzdzaEVMMTdLTEIwb1hiLVJ6d0trZTNNWmQwbUF3bWdISEJyanRJbW5hcjlvYUZOUzVqQzZ1X1lWU1JJS2tQZmRZVXpYcE5hVUpnMmlva0E2QnNxUDl4WXBKTWF3WHJyd0pVQlB4dUxjYWZ1emVLYzBvbUZVOFk0TkNpOEhEd2cyMTZlSk9meWJpb2FyeGs1aWE5T1VTMXpVU3pnYjNTT0QtRlZRSmxrOEpvT29XdkQtU0NVSEhuTE5QUWliX1ZZMkYxWExJTEhwVGZWenpxc0dFYTdDWVd4Y3lvTzF2ZEtDZXJubjZQNmFWc2FHVWUwUVhHQlNxQ1JRRVlFcVpHd3pHckpzeDFaNnVhUFZ2aUVveURBel9FTzBhUy1iWTJ2S29ndC1XR1JYLWVXRGlRdHFyVlNaNjNzM1J6RFVwYUNRamY3V1h3OGcxNDVOSzVlZldNOGs0UTVIOTRHVDhINnJsU0ZvQnRuRlFtUXlmbW4xWkxrOGk5YmRqUjBMWnMxTlBVUkQ3ejVpUGxqV0pTUjNESHFKVnNMWUx3YVcwM3R6bm5fcjlTNzlWT29RY2lvclN0NklPNXFvZVZsREh4ZjlqbmhQQlJIdTZibnZRbktVRXg2bkJUSzZIRFZtR0I3SXpTWk84eTFON1h5dThENzFIWm45V2s4UUNSOXVkUjRxdWoxamFxdUk5cGtWX0pfNXdDVkk3a04tMmdleUxLcEpoNEhodEtLRkUtdGdQeXhpT3FvRzUtc1k5c18zZEx1MzF0N1pCNnRxU2lKUDdwMW1XQ29fazc2Q3ZQQjF3eWZWbEJ5cGxyM3FuWGlRbTliNkZtRl9tNDRVd0luZGJ0bXZScEh4dDNjaTMxSl93OVhFRWY5OXJSa2xzaHBJY1dSVEdDSmRWc1YzcmhlZVpWOGQzS3RPMjFueHdPQ3pfM1BCSWlRZ3NRN2diSDZZajZOY3oyemVjYUkwQ1VXbUU0TmstejQwaVFVVWl1alRhVWtXNksyWXBzTFhoVFpJdi1PbFNiR0pISGRNQ0R2S3d4M3RJMWJrVlUyN2Jsc3NoXzRHSWEyMTZtTHFLMWdmal9Ma0thTkFzbGZTdjluZ2cyTGFTZjMxSk5KVkVQZkFiWlFqVEJiZU9NUUVzMlpOMmVwNllMbGFpT1FOYTR3cHYxWWtWVjQydWpXOWZjZ3hhYm4yeDRwUkRKSF9kWjVKOGw5TUV0ZGRFZ0l2S0FZSVpVNGtIZlZHUUVuSW1ETmRDUWhrektQS0xDUHFfX09YWkV1LUwtQ2tmanVvaXE1UXMycjhqZEpjOGxuRmpFTDh6dFNDb3Ff)
         XCODE_WORKSPACE: yamlmanualdevelopment.xcworkspace
         XCODE_SCHEME: yamlmanualdevelopment
-        DISCORD_HOOK: https://discord.com/api/webhooks/769114802114789406/vKmeUbq8VcWfas0MAMDtA0c5Ma_p5Qx0QC_kInemW03MzA9ScOGHtbqHo4OZ3Zfji66u
       flutter: stable
       xcode: latest
       cocoapods: default
     scripts:
+      - git clone git@github.com:VeArnold/magicapp.git
       - find . -name "Podfile" -execdir pod install \;
       - keychain initialize
       - app-store-connect fetch-signing-files "com.codemagic.yamlmanualdevelopment" --type IOS_APP_DEVELOPMENT --create
@@ -26,98 +26,3 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-    publishing:
-      scripts:
-        - name: Discord.sh
-          script: |
-            source MY_ENV_VARS
-            git clone https://github.com/ChaoticWeg/discord.sh.git && cd discord.sh
-              if [ $BUILD_STATUS == 'success' ]
-              then
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0x32CD32" --description "Build [#$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) was successful! :smiley:"
-              else
-                ./discord.sh --webhook-url "$DISCORD_HOOK" --author-icon "https://avatars2.githubusercontent.com/u/53334409?s=400&v=4" --author "Codemagic" --color "0xFF0000" --description "Build [#$BUILD_NUMBER](https://codemagic.io/app/$FCI_PROJECT_ID/build/$FCI_BUILD_ID) failed! :worried:"
-              fi
-
-        - name: Discord Extensive
-          script: |
-            source MY_ENV_VARS
-            pip3 install dhooks
-            python3 - <<EOF
-            import os
-            import subprocess
-            import sys
-            from dhooks import Webhook, Embed
-
-            hook = Webhook(os.getenv('DISCORD_HOOK'))
-
-            build_number = os.getenv('BUILD_NUMBER')
-            build_id = os.getenv('FCI_BUILD_ID')
-            commit = os.getenv('FCI_COMMIT')
-            project_id = os.getenv('FCI_PROJECT_ID')
-            project = 'https://codemagic.io/app/%s' % (project_id)
-            build_url = '%s/build/%s' % (project, build_id)
-            build_status = os.getenv('BUILD_STATUS')
-
-            if os.getenv('BUILD_STATUS') == 'success':
-                embed = Embed(
-                    description='Build [#%s](%s) was successful! :smiley:' % (build_number, build_url),
-                    color=0x32CD32,
-                    timestamp='now'
-                    )
-            else:
-                embed = Embed(
-                    description='Build [#%s](%s) failed! :worried:' % (build_number, build_url),
-                    color=0xFF0000,
-                    timestamp='now'
-                    )
-
-            image1 = 'https://avatars2.githubusercontent.com/u/53334409?s=400&v=4'
-            image2 = 'https://d2mn9dr0jv4622.cloudfront.net/wp-content/uploads/2018/12/04153145/CM-blog.jpg'
-            embed.set_author(name='Codemagic', icon_url=image1)
-            embed.add_field(name='Commit', value=commit)
-            embed.add_field(name='Project', value=project)
-            embed.set_footer(text='Date', icon_url=image1)
-            embed.set_thumbnail(image1)
-            embed.set_image(image2)
-            hook.send(embed=embed)
-            EOF
-        - name: Discord Minimal
-          script: |
-            source MY_ENV_VARS
-            python3 - <<EOF
-            import os
-            import requests
-            import json
-            
-            url = os.getenv('DISCORD_HOOK')
-            build_number = os.getenv('BUILD_NUMBER')
-            build_id = os.getenv('FCI_BUILD_ID')
-            commit = os.getenv('FCI_COMMIT')
-            project_id = os.getenv('FCI_PROJECT_ID')
-            project = 'https://codemagic.io/app/%s' % (project_id)
-            build_url = '%s/build/%s' % (project, build_id)
-            build_status = os.getenv('BUILD_STATUS')
-
-            data = {}
-            data["username"] = "Codemagic"
-            data["embeds"] = []
-            embed = {}
-
-            if build_status == "success":
-                embed["description"] = 'Build [#%s](%s) was successful! :smiley:' % (build_number, build_url)
-                embed["color"] = 0x32CD32
-            else:
-                embed["description"] = 'Build [#%s](%s) failed! :worried:' % (build_number, build_url)
-                embed["color"] = 0xFF0000
-
-            data["embeds"].append(embed)
-            result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
-
-            try:
-                result.raise_for_status()
-            except requests.exceptions.HTTPError as err:
-                print(err)
-            else:
-                print("Payload delivered successfully, code {}.".format(result.status_code))
-            EOF
