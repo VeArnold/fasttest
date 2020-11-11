@@ -14,13 +14,13 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
-      triggering:
-        events:
-          - pull_request
-        branch_patterns:
-          - pattern: '*'
-            include: true
-            source: true
+    triggering:
+      events:
+        - pull_request
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
     scripts:
       - find . -name "Podfile" -execdir pod install \;
       - keychain initialize
