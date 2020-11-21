@@ -5,6 +5,7 @@ workflows:
     triggering:
       events:
         - pull_request
+        - tag
       branch_patterns:
         - pattern: '*'
           include: true
