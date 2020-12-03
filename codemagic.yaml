@@ -6,6 +6,13 @@ workflows:
                 XCODE_WORKSPACE: "{{AwesomeProject}}"
                 XCODE_SCHEME: "{{AwesomeProject}}"
             node: latest
+        triggering:
+            events:
+                - push
+            branch_patterns:
+                - pattern: main
+                  include: true
+                  source: true
         scripts:
             - npm install
             - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
@@ -26,6 +33,6 @@ workflows:
             slack:
                 channel: "#test_chatbot_slack"
                 notify_on_build_start: true # To receive a notification when a build starts
-              notify:
-                  success: true # To not receive a notification when a build succeeds
-                  failure: true # To not receive a notification when a build fails
+                notify:
+                    success: true # To not receive a notification when a build succeeds
+                    failure: true # To not receive a notification when a build fails
