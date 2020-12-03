@@ -1,14 +1,31 @@
-
 workflows:
-  workflow_one:
-    name: Test Workflow
-    triggering:
-      events:
-        - pull_request
-        - tag
-      branch_patterns:
-        - pattern: '*'
-          include: true
-          source: true
-    scripts:
-      - echo "Hello World!"
+    react-native:
+        name: AwesomeProject
+        environment:
+            vars:
+                XCODE_WORKSPACE: "{{AwesomeProject}}"
+                XCODE_SCHEME: "{{AwesomeProject}}"
+            node: latest
+        scripts:
+            - npm install
+            - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
+            - |
+                # build Android
+                cd android
+                ./gradlew assembleDebug
+            - |
+                # build iOS
+                cd ios
+                pod install
+                xcodebuild build -workspace "$XCODE_WORKSPACE.xcworkspace" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        artifacts:
+            - android/app/build/outputs/**/*.apk
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+        publishing:
+            slack:
+                channel: "#test_chatbot_slack"
+                notify_on_build_start: true # To receive a notification when a build starts
+            notify:
+                success: true # To not receive a notification when a build succeeds
+                failure: true # To not receive a notification when a build fails
