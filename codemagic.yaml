@@ -26,6 +26,6 @@ workflows:
             slack:
                 channel: "#test_chatbot_slack"
                 notify_on_build_start: true # To receive a notification when a build starts
-            notify:
-                success: true # To not receive a notification when a build succeeds
-                failure: true # To not receive a notification when a build fails
+              notify:
+                  success: true # To not receive a notification when a build succeeds
+                  failure: true # To not receive a notification when a build fails
