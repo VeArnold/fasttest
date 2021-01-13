@@ -7,7 +7,7 @@ workflows:
                 XCODE_SCHEME: "{{AwesomeProject}}"
             node: latest
         triggering:
-        events:
+            events:
                 - push
             branch_patterns:
                 - pattern: main
