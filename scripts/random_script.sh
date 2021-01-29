@@ -1,1 +1,1 @@
-
+ECHO $BUILD_NUMBER
