@@ -5,12 +5,13 @@ workflows:
             vars:
                 XCODE_WORKSPACE: "{{AwesomeProject}}"
                 XCODE_SCHEME: "{{AwesomeProject}}"
+                PATTERN: 'main'
             node: latest
         triggering:
             events:
                 - push
             branch_patterns:
-                - pattern: main
+                - pattern: $PATTERN
                   include: true
                   source: true
         scripts:
