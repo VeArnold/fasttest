@@ -11,7 +11,7 @@ workflows:
             events:
                 - push
             branch_patterns:
-                - pattern: $TEST
+                - pattern: main
                   include: true
                   source: true
         scripts:
