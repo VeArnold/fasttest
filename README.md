@@ -10,3 +10,4 @@
 * navigate to repository "Settings" > "Branches" > "Add rule"
 * fill in your branch name and check "Require status checks to pass before merging"
 * check the Codemagic status check from the list and click "Create"
+
