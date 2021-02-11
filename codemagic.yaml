@@ -8,6 +8,8 @@ workflows:
                 - pattern: main
                   include: true
                   source: true
+        scripts:
+          - echo 'hello'
      second:
         name: second
         triggering:
@@ -17,6 +19,8 @@ workflows:
                 - pattern: main
                   include: true
                   source: true
+        scripts:
+          - echo 'hello'
      third:
         name: third
         triggering:
@@ -26,3 +30,5 @@ workflows:
                 - pattern: main
                   include: true
                   source: true
+        scripts:
+          - echo 'hello'
