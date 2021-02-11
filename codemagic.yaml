@@ -17,4 +17,4 @@ workflows:
         scripts:
             - |
               wget https://api.codemagic.io/artifacts/7f4a1f1c-f424-4753-8316-a94086daf20d/83725ca1-ecea-4704-825c-eb186b58a1ad/ArnoldNativeiOS_16_artifacts.zip
-              unzip '*.zip''*.app/'
+              unzip '*.zip' '*.app/'
