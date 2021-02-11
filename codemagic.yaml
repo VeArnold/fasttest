@@ -1,34 +1,35 @@
 workflows:
-    first:
-        name: first
-        triggering:
-            events:
-                - push
-            branch_patterns:
-                - pattern: main
-                  include: true
-                  source: true
-        scripts:
-          - echo 'hello'
-     second:
-        name: second
-        triggering:
-            events:
-                - push
-            branch_patterns:
-                - pattern: main
-                  include: true
-                  source: true
-        scripts:
-          - echo 'hello'
-     third:
-        name: third
-        triggering:
-            events:
-                - push
-            branch_patterns:
-                - pattern: main
-                  include: true
-                  source: true
-        scripts:
-          - echo 'hello'
+  first:
+    name: first
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - echo 'hello'
+  second:
+    name: second
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - echo 'hello'
+  third:
+    name: third
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - echo 'hello'
+
