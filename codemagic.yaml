@@ -1,6 +1,8 @@
 workflows:
   first:
     name: first
+    environment:
+      node: 14.15.5
     triggering:
       events:
         - push
