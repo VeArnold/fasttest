@@ -5,7 +5,7 @@ workflows:
       node: 14.15.5
       ndk: r19c
     scripts:
-      - echo 'hello
+      - echo 'hello'
       - |
         wget https://dl.google.com/android/repository/android-ndk-r19c-darwin-x86_64.zip && unzip android-ndk-r19c-darwin-x86_64.zip
         mv android-ndk-r19c/ $ANDROID_HOME/ndk
