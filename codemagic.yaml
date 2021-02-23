@@ -4,35 +4,9 @@ workflows:
     environment:
       node: 14.15.5
       ndk: r19c
-    triggering:
-      events:
-        - push
-      branch_patterns:
-        - pattern: main
-          include: true
-          source: true
     scripts:
-      - echo 'hello'
-  second:
-    name: second
-    triggering:
-      events:
-        - push
-      branch_patterns:
-        - pattern: main
-          include: true
-          source: true
-    scripts:
-      - echo 'hello'
-  third:
-    name: third
-    triggering:
-      events:
-        - push
-      branch_patterns:
-        - pattern: main
-          include: true
-          source: true
-    scripts:
-      - echo 'hello'
+      - echo 'hello
+      - |
+        wget https://dl.google.com/android/repository/android-ndk-r19c-darwin-x86_64.zip && unzip android-ndk-r19c-darwin-x86_64.zip
+        mv android-ndk-r19c/ $ANDROID_HOME/ndk
 
