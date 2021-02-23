@@ -3,6 +3,7 @@ workflows:
     name: first
     environment:
       node: 14.15.5
+      ndk: r19c
     triggering:
       events:
         - push
