@@ -1,6 +1,6 @@
 workflows:
   first:
-    name: first
+    name: prank
     environment:
       node: 14.15.5
       ndk: r19c
