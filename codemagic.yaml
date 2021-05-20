@@ -1,7 +1,7 @@
 workflows:
   first:
     name: prank
-    env:
+    environment:
       vars:
         RBENV_VERSION: 2.5.1
     triggering:
