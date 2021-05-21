@@ -5,4 +5,6 @@ workflows:
       ruby: 2.5.1
     scripts:
       - echo 'hello'
+      - echo $RBENV_VERSION
+      - rbenv version
 
