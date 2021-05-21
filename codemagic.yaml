@@ -3,10 +3,9 @@ workflows:
     name: prank
     environment:
       ruby: 2.5.1
-      vars:
-        RBENV_VERSION: 2.5.1
     scripts:
       - echo 'hello'
+      - sleep 20
       - echo $RBENV_VERSION
       - rbenv version
 
