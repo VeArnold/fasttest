@@ -1,7 +1,7 @@
 workflows:
   first:
     name: prank
-    envrionment:
+    environment:
       cocoapods: 1.10.1
     scripts:
       - echo 'hello'
