@@ -1,6 +1,8 @@
 workflows:
   first:
     name: prank
+    envrionment:
+      cocoapods: 1.10.1
     scripts:
       - echo 'hello'
       - sleep 20
