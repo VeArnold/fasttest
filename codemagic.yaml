@@ -1,6 +1,5 @@
 workflows:
   first:
-    instance_type: linux
     name: prank
     environment:
       ruby: 2.5.1
