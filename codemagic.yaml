@@ -1,8 +1,6 @@
 workflows:
   first:
     name: prank
-    environment:
-      ruby: 2.5.1
     scripts:
       - echo 'hello'
       - sleep 20
