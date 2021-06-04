@@ -1,18 +1,12 @@
 workflows:
-  first:
-    name: prank
-    triggering:
-      events:
-        - tag
-      branch_patterns:
-        - pattern: '*'
-          include: true
-          source: true
-    environment:
-      cocoapods: 1.10.1
-    scripts:
-      - echo 'hello'
-      - sleep 20
-      - echo $RBENV_VERSION
-      - rbenv version
-
+  my-workflow:
+    publishing:
+      scripts:
+        script: |
+          apkPath=$(find build -name "*.apk" | head -1)
+          if [[ -z ${apkPath} ]]
+          then
+            echo "No .apk were found"
+          else
+            echo "Publishing .apk artifacts"
+          fi      
