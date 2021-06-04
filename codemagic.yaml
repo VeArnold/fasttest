@@ -2,11 +2,12 @@ workflows:
   my-workflow:
     publishing:
       scripts:
-        script: |
-          apkPath=$(find build -name "*.apk" | head -1)
-          if [[ -z ${apkPath} ]]
-          then
-            echo "No .apk were found"
-          else
-            echo "Publishing .apk artifacts"
-          fi      
+        - name: Check for APK
+          script: |
+            apkPath=$(find build -name "*.apk" | head -1)
+            if [[ -z ${apkPath} ]]
+            then
+              echo "No .apk were found"
+            else
+              echo "Publishing .apk artifacts"
+            fi      
