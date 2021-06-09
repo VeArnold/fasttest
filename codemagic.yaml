@@ -1,4 +1,6 @@
 workflows:
   my-workflow:
+    environment:
+      java: 11
     scripts:
       - sleep 20
