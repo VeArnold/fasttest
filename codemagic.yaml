@@ -1,9 +1,6 @@
 workflows:
   my-workflow:
-    instance_type: linux
-    max_build_duration: 1
     environment:
-      vars:
-        JAVA_HOME: /usr/lib/jvm/java-1.11.0-openjdk-amd64
+      xcode: 11.7
     scripts:
       - sleep 120
