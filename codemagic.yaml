@@ -1,11 +1,9 @@
 workflows:
   my-workflow:
     instance_type: linux
+    timeout: 1
     environment:
       vars:
         JAVA_HOME: /usr/lib/jvm/java-1.11.0-openjdk-amd64
     scripts:
-      - echo $JAVA_HOME
-      - sudo update-java-alternatives -s $JAVA_HOME --jre-headless
-      - java -version
-      - cd .. && cat gradle.properties
+      - sleep 120
