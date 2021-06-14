@@ -1,5 +1,8 @@
 workflows:
   my-workflow:
     instance_type: linux
+    environment:
+      vars:
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
     scripts:
       - sleep 20
