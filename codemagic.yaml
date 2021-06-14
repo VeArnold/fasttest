@@ -1,4 +1,5 @@
 workflows:
   my-workflow:
+    instance_type: linux
     scripts:
       - sleep 20
