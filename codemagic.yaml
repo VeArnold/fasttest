@@ -5,6 +5,7 @@ workflows:
       vars:
         JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
     scripts:
+      - sleep 5
       - echo $JAVA_HOME
       - sudo update-java-alternatives -s $JAVA_HOME --jre-headless
       - sleep 20
