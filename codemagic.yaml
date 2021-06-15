@@ -1,7 +1,5 @@
 workflows:
   my-workflow:
-    environment:
-      xcode: 11.7
     scripts:
       - java --version
       - sleep 100
