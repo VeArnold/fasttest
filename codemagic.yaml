@@ -2,8 +2,6 @@ workflows:
   my-workflow:
     environment:
       xcode: 11.7
+      java: 11
     scripts:
-      - brew update
-      - brew install java11
-      - sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-      - /usr/libexec/java_home -v 11
+      - sleep 100
