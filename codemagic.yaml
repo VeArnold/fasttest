@@ -1,7 +1,7 @@
 workflows:
   my-workflow:
     environment:
-      java: 'default'
+      java: 'latest'
     scripts:
       - echo $JAVA_HOME
       - sleep 100
