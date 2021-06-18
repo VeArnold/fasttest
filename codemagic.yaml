@@ -1,6 +1,7 @@
 workflows:
   my-workflow:
-    instance_type: linux
+    environment:
+      xcode: 11.7
     scripts:
       - echo $JAVA_HOME
       - sleep 100
