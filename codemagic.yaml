@@ -1,5 +1,6 @@
 workflows:
   my-workflow:
+    instance_type: linux
     environment:
       java: latest
     scripts:
