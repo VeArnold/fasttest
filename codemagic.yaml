@@ -1,7 +1,7 @@
 workflows:
   my-workflow:
     instance_type: linux
-    envrionment:
+    environment:
       java: 1.8
     scripts:
       - echo $JAVA_HOME
