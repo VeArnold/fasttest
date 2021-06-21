@@ -1,7 +1,7 @@
 workflows:
   my-workflow:
     environment:
-      cocoapods: 42959
+      cocoapods: t3qtq3
     scripts:
       - echo $JAVA_HOME
       - sleep 100
