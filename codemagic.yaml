@@ -1,5 +1,7 @@
 workflows:
   my-workflow:
+    environment:
+      java: 1.8
     scripts:
       - echo $JAVA_HOME
       - sleep 100
