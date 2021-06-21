@@ -1,7 +1,8 @@
 workflows:
   my-workflow:
     instance_type: linux
-    java: default
+    environment:
+      java: default
     scripts:
       - echo $JAVA_HOME
       - sleep 100
