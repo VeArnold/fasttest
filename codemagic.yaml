@@ -1,7 +1,7 @@
 workflows:
   my-workflow:
     environment:
-      flutter: '1.22.6'
+      flutter: ‘1.22.6‘
     scripts:
       - echo $JAVA_HOME
       - sleep 100
