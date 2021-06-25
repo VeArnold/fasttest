@@ -1,8 +1,7 @@
 workflows:
   my-workflow:
     environment:
-      xcode: 11.7
-      java: default
+      flutter: '1.22.6'
     scripts:
       - echo $JAVA_HOME
       - sleep 100
