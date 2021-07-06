@@ -10,3 +10,7 @@ workflows:
     publishing:
       firebase:
         firebase_token: meow
+        ios:
+          app_id: 'one'
+        android:
+          app_id: 'two'
