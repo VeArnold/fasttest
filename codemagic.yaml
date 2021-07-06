@@ -13,5 +13,12 @@ workflows:
         ios:
           app_id: 'one'
           groups:
+            - bee
+            - zoo
+            - goo
         android:
           app_id: 'two'
+          groups:
+            - wee
+            - woo
+            - doo
