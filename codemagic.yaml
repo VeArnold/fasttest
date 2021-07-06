@@ -12,5 +12,6 @@ workflows:
         firebase_token: meow
         ios:
           app_id: 'one'
+          groups:
         android:
           app_id: 'two'
