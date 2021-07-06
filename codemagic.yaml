@@ -7,3 +7,6 @@ workflows:
       - echo $TEST_STUFF
       - echo $JAVA_HOME
       - sleep 100
+    publishing:
+      firebase:
+        firebase_token: meow
