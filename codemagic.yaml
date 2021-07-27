@@ -4,8 +4,8 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
-        - group1
         - group2
+        - group1
     scripts:
       - echo $SECRET
       - echo $MAGIC
