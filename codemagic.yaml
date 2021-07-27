@@ -4,9 +4,10 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
-        - magic
-        - llama
+        - group1
+        - group2
     scripts:
+      - echo $SECRET
+      - echo $CAT
       - echo $TEST_STUFF
-      - echo $JAVA_HOME
       - sleep 100
