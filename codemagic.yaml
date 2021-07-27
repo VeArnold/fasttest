@@ -8,6 +8,6 @@ workflows:
         - group1
     scripts:
       - echo $SECRET
-      - echo $CAT
+      - echo $MAGIC
       - echo $TEST_STUFF
       - sleep 100
