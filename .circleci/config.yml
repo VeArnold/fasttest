@@ -1,0 +1,19 @@
+version: 2.1
+
+workflows:
+  my-workflow:
+    jobs:
+      - run-tests:
+          context:
+            - ios
+            - android
+
+jobs:
+  run-tests:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run:
+          name: "echo tiiger"
+          command: echo $TIIGER
