@@ -4,9 +4,9 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
-        - same_group
-        - team_group
-        - app_group
+        - SAME_GROUP
+        - TEAM_GROUP
+        - APP_GROUP
     scripts:
       - echo $SECRET
       - echo $MAGIC
