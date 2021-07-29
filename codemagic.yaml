@@ -4,8 +4,8 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
-        - test2
         - test
+        - test2
     scripts:
       - echo $FOO
       - echo $MAGIC
