@@ -5,8 +5,6 @@ workflows:
         TEST_STUFF: 'hey'
       groups:
         - app_group
-        - test
-        - test2
     scripts:
       - echo $FOO
       - echo $MAGIC
