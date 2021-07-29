@@ -4,6 +4,7 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
+        - APP_GROUP
         - BAM
     scripts:
       - echo $SECRET
