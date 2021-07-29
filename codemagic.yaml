@@ -4,10 +4,9 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
-        - same_group
-        - BAM
+        - test2
     scripts:
-      - echo $SECRET
+      - echo $FOO
       - echo $MAGIC
       - echo $TEST_STUFF
       - sleep 100
