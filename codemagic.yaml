@@ -4,6 +4,7 @@ workflows:
       vars:
         TEST_STUFF: 'hey'
       groups:
+        - app_group
         - test
         - test2
     scripts:
