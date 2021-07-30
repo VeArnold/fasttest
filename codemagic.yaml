@@ -6,6 +6,9 @@ workflows:
       groups:
         - app_group
         - same_group
+        - team_group
+        - team_group2
+        - app_group2
     scripts:
       - echo $FOO
       - echo $MAGIC
