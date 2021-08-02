@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     environment:
       vars:
-        TEST_STUFF: Encrypted(Z0FBQUFBQmhCX0RuYU5CdWpjWTlvS0ZOYkp6akVFeDd5NUk1WmpzNU10MGJMekJTTVRYMVBuZnMxS1hxWTZYSGFMODR1LWY3ZG1KcTJIV2hZMUh5WFlyZEMycFQ1aGpSdVE9PQ==)'
+        TEST_STUFF: Encrypted(Z0FBQUFBQmhCX0hzcmdxelRFaGo3X1RCcmhXLUp5Vi1WZmtDZUR5cXVHVENzU19ySkh4aUdQbS1HSVdJXzBuelM2RUhzSmlVbTB4ajFIUXNqX25URmdQUTlQWTh3S1FnR1E9PQ==)
     scripts:
       - echo $FOO
       - echo $MAGIC
