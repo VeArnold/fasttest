@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     environment:
       vars:
-        TEST_STUFF: Encrypted(====)
+        TEST_STUFF: Encrypted(...)
     scripts:
       - echo $FOO
       - echo $MAGIC
