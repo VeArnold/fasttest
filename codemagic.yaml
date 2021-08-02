@@ -2,13 +2,7 @@ workflows:
   my-workflow:
     environment:
       vars:
-        TEST_STUFF: 'hey'
-      groups:
-        - app_group
-        - same_group
-        - team_group
-        - team_group2
-        - app_group2
+        TEST_STUFF: Encrypted(Z0FBQUFBQmhCX0RuYU5CdWpjWTlvS0ZOYkp6akVFeDd5NUk1WmpzNU10MGJMekJTTVRYMVBuZnMxS1hxWTZYSGFMODR1LWY3ZG1KcTJIV2hZMUh5WFlyZEMycFQ1aGpSdVE9PQ==)'
     scripts:
       - echo $FOO
       - echo $MAGIC
