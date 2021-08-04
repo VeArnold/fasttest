@@ -2,9 +2,7 @@ workflows:
   my-workflow:
     environment:
       groups:
-        - uus
-        - teine
-        - kolmas
+        - meow
     scripts:
       - echo $LAHE
       - echo $LAHE2
