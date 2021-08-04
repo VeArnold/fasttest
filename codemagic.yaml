@@ -1,10 +1,12 @@
 workflows:
   my-workflow:
     environment:
-      vars:
-        TEST_STUFF: Encrypted(...)
+      groups:
+        - uus
+        - teine
+        - kolmas
     scripts:
-      - echo $FOO
-      - echo $MAGIC
-      - echo $TEST_STUFF
+      - echo $LAHE
+      - echo $LAHE2
+      - echo $LAHE3
       - sleep 100
