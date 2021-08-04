@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     environment:
       groups:
-        - meow
+        - staging
     scripts:
       - echo $LAHE
       - echo $LAHE2
