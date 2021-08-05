@@ -1,6 +1,8 @@
 workflows:
   my-workflow:
     environment:
+      vars:
+        TEST_STUFF: show
       groups:
         - team
         - app
