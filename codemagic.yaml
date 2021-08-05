@@ -2,7 +2,9 @@ workflows:
   my-workflow:
     environment:
       groups:
-        - staging
+        - team
+        - app
+        - same
     scripts:
       - echo $LAHE
       - echo $LAHE2
