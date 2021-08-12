@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     environment:
       vars:
-        TEST_STUFF: show
+        TEST_STUFF: '`git rev-list $FCI_BRANCH --count`'
       groups:
         - team
         - app
@@ -12,10 +12,3 @@ workflows:
       - echo $LAHE2
       - echo $LAHE3
       - sleep 100
-    publishing:
-      firebase:
-        firebase_token: $MAGICALMUSHROOM
-        android:
-          app_id: x:xxxxxxxxxxxx:android:xxxxxxxxxxxxxxxxxxxxxx # Add your Android app id retrieved from Firebase console
-          groups: # Add one or more groups that you wish to distribute your Android application to, you can create groups in the Firebase console
-            - androidTesters
