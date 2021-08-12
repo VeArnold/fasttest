@@ -3,10 +3,6 @@ workflows:
     environment:
       vars:
         TEST_STUFF: '`git rev-list $FCI_BRANCH --count`'
-      groups:
-        - team
-        - app
-        - same
     scripts:
       - echo $LAHE
       - echo $LAHE2
