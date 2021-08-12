@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     environment:
       vars:
-        TEST_STUFF: 'git rev-list $FCI_BRANCH --count'
+        TEST_STUFF: '`git rev-list $FCI_BRANCH --count`'
     scripts:
       - echo $LAHE
       - echo $LAHE2
