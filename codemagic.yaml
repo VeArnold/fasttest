@@ -1,5 +1,16 @@
 workflows:
   my-workflow:
+    name: first
+    environment:
+      vars:
+        TEST_STUFF: 'git rev-list $FCI_BRANCH --count'
+    scripts:
+      - echo $LAHE
+      - echo $LAHE2
+      - echo $LAHE3
+      - sleep 100
+  my-workflow2:
+    name: second
     environment:
       vars:
         TEST_STUFF: 'git rev-list $FCI_BRANCH --count'
