@@ -6,3 +6,4 @@ workflows:
         - esimene
     scripts:
       - echo $KASS
+      - echo $TASS
