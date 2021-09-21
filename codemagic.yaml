@@ -7,6 +7,7 @@ workflows:
       vars:
         WHY: 'catcatcat'
     scripts:
+      - echo $JAVA_HOME
       - echo $KASS
       - echo $TASS
       - echo $WHY
