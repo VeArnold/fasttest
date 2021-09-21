@@ -4,6 +4,9 @@ workflows:
     environment:
       groups:
         - esimene
+      vars:
+        WHY: 'catcatcat'
     scripts:
       - echo $KASS
       - echo $TASS
+      - echo $WHY
