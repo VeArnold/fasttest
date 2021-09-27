@@ -6,7 +6,6 @@ workflows:
         - esimene
         - teine
         - kolmas
-        - kk
       vars:
         WHY: 'catcatcat'
     scripts:
