@@ -2,8 +2,6 @@ workflows:
   my-workflow:
     name: first
     environment:
-      groups:
-        - esimene
       vars:
         WHY: 'catcatcat'
     scripts:
