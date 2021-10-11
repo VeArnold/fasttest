@@ -2,12 +2,9 @@ workflows:
   my-workflow:
     name: first
     environment:
-      groups:
-        - esimene
-        - teine
-        - kolmas
       vars:
-        WHY: 'catcatcat'
+        TOKEN: 'catcatcat'
+        FIREBASE_ANDROID_ID: 'catcatcat'
     scripts:
       - echo $JAVA_HOME
       - echo $KASS
