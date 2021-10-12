@@ -15,8 +15,7 @@ workflows:
     publishing:
       firebase:
         firebase_token: $TOKEN
-        android:
-          artifact_type: apk
+        ios:
           app_id: $FIREBASE_ANDROID_ID
           groups:
             - magicGroup
