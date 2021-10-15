@@ -17,5 +17,5 @@ workflows:
       - testing/*.aab
     publishing:
       google_play: # For Android app
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS # Contents of the JSON key file for Google Play service account saved as a secure environment variable
+        credentials: $BETTER # Contents of the JSON key file for Google Play service account saved as a secure environment variable
         track: alpha # Name of the track: internal, alpha, beta, production, internal app sharing, or your custom track name
