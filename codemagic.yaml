@@ -5,6 +5,7 @@ workflows:
       vars:
         TOKEN: 'catcatcat'
         FIREBASE_ANDROID_ID: 'catcatcat'
+        BETTER: 'dong'
       groups:
         - esimene
     scripts:
