@@ -5,7 +5,10 @@ workflows:
       vars:
         TOKEN: 'catcatcat'
         FIREBASE_ANDROID_ID: 'catcatcat'
+      groups:
+        - esimene
     scripts:
+      - sleep 1000
       - echo $JAVA_HOME
       - echo $KASS
       - echo $TASS
@@ -13,9 +16,6 @@ workflows:
     artifacts:
       - testing/*.aab
     publishing:
-      firebase:
-        firebase_token: $TOKEN
-        ios:
-          app_id: $FIREBASE_ANDROID_ID
-          groups:
-            - magicGroup
+      google_play: # For Android app
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS # Contents of the JSON key file for Google Play service account saved as a secure environment variable
+        track: alpha # Name of the track: internal, alpha, beta, production, internal app sharing, or your custom track name
