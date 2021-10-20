@@ -2,6 +2,7 @@ workflows:
   my-workflow:
     name: first
     environment:
+      node: v16.11.1
       vars:
         TOKEN: 'catcatcat'
         FIREBASE_ANDROID_ID: 'catcatcat'
