@@ -9,11 +9,13 @@ workflows:
     triggering:
       events:
         - pull_request
+        - push
+      branch_patterns:
+        - pattern: "*"
+          include: true
+          source: true
+        - pattern: "main"
+          include: false
+          source: false
     scripts:
-      - name: Skip build
-        script: |
-          curl -H "Content-Type: application/json" -H "x-auth-token: <API Token>" --request POST https://api.codemagic.io/builds/$FCI_BUILD_ID/cancel
-        when:
-          changeset:
-            includes:
-              - 'app/**'
+      - echo 'hi'
