@@ -1,7 +1,6 @@
 workflows:
   my-workflow:
     name: My new test workflow
-    instance_type: mac_pro
     max_build_duration: 60
     environment:
       flutter: stable
