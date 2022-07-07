@@ -5,19 +5,8 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-    triggering:
-      events:
-        - pull_request
-        - push
-      branch_patterns:
-        - pattern: "*"
-          include: true
-          source: true
-        - pattern: "main"
-          include: false
-          source: false
-        - pattern: "main"
-          include: false
-          source: true
+    cache:
+      cache_paths:
+        - $CM_BUILD_DIR/meow_folder
     scripts:
-      - echo 'hi'
+      - sleep 30
