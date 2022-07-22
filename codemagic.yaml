@@ -13,7 +13,7 @@ workflows:
     when:
       condition: event.action != "ready_for_review"
     scripts:
-      - flutter packages pub get
+      - echo 'hi'
     artifacts:
       - "*.snap"
       - build/windows/**/*.msix
