@@ -6,6 +6,7 @@ workflows:
     environment:
       vars:
         CM_CLONE_DEPTH: 1
+        CM_CLONE_UNSHALLOW: true
     triggering:
       events:
         - pull_request
