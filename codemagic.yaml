@@ -3,6 +3,9 @@ workflows:
     name: Default Workflow
     instance_type: mac_mini
     max_build_duration: 60
+    labels:
+      - cat
+      - Dog
     environment:
       vars:
         CM_CLONE_DEPTH: 1
