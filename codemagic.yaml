@@ -9,7 +9,7 @@ workflows:
       - cat
       - Dog
     scripts:
-      - echo 'hi'
+      - sleep 120
     artifacts:
       - "*.snap"
       - build/windows/**/*.msix
