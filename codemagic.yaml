@@ -4,9 +4,6 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       xcode: 13.3
-      groups:
-        - cat
     max_build_duration: 60
     scripts:
-      - echo $cat
       - sleep 180
