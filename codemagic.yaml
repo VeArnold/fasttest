@@ -9,3 +9,4 @@ workflows:
     max_build_duration: 60
     scripts:
       - echo $cat
+      - sleep 180
