@@ -5,10 +5,6 @@ workflows:
     environment:
       xcode: 13.4.1
     scripts:
-      - name: cool
-        script: |
-          SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
-          swift meow.swift
       - swift meow.swift
       - xcrun --sdk macosx --show-sdk-path
       - echo $SDKROOT
