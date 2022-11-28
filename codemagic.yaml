@@ -3,6 +3,10 @@ workflows:
     name: def
     max_build_duration: 60
     scripts:
+      - name: cool
+        script: |
+          SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+          swift meow.swift
       - swift meow.swift
       - xcrun --sdk macosx --show-sdk-path
       - echo $SDKROOT
