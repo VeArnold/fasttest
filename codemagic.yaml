@@ -3,6 +3,7 @@ workflows:
     name: def
     max_build_duration: 60
     scripts:
+      - swift meow.swift
       - xcrun --sdk macosx --show-sdk-path
       - echo $SDKROOT
       - sleep 180
