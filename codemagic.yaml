@@ -1,9 +1,6 @@
 workflows:
   default-workflow:
     name: def
-    instance_type: mac_pro
-    environment:
-      xcode: 14
     max_build_duration: 60
     scripts:
       - xcrun --sdk macosx --show-sdk-path
