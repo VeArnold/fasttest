@@ -2,10 +2,8 @@ workflows:
   default-workflow:
     name: def
     max_build_duration: 60
-    environment:
-      xcode: 13.4.1
     scripts:
-      - swift meow.swift
-      - xcrun --sdk macosx --show-sdk-path
-      - echo $SDKROOT
-      - sleep 180
+      - |
+        set -e
+        # weird
+        echo "weird"
