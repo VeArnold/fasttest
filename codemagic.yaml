@@ -1,6 +1,6 @@
 workflows:
   default-workflow:
-    image: mac_pro
+    image_type: mac_pro
     environment:
       xcode: 12.5
     name: def
