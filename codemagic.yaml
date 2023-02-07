@@ -1,5 +1,5 @@
 workflows:
-  default-workflow:
+  cat:
     instance_type: mac_pro
     environment:
       xcode: 12.5
