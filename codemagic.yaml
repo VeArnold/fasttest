@@ -2,7 +2,7 @@ workflows:
   cat:
     instance_type: mac_mini_m1
     environment:
-      xcode: 12
+      xcode: 13
     name: def
     max_build_duration: 60
     scripts:
