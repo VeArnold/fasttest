@@ -1,7 +1,6 @@
 workflows:
   cat:
-    environment:
-      xcode: 14
+    instance_type: linux_v2
     name: def
     max_build_duration: 1
     scripts:
