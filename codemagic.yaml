@@ -1,6 +1,6 @@
 workflows:
   cat:
-    instance_type: linux_v2
+    instance_type: linux_x2
     name: def
     max_build_duration: 1
     scripts:
