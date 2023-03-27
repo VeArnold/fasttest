@@ -2,6 +2,6 @@ workflows:
   cat:
     name: def
     max_build_duration: 5
-    instance_type: linux_x2
+    instance_type: mac_mini_m1
     scripts:
       - echo "hi"
