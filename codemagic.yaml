@@ -4,6 +4,6 @@ workflows:
     max_build_duration: 5
     instance_type: mac_mini_m1
     environment:
-      flutter: stable
+      flutter: default
     scripts:
       - echo "hi"
