@@ -7,8 +7,6 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.example.id
-      flutter:
-        version: stable
-        flavor: meow
+      flutter: stable
     scripts:
       - echo "hi"
