@@ -6,6 +6,6 @@ workflows:
     environment:
       flutter:
         version: stable
-        cat: meow
+        flavor: meow
     scripts:
       - echo "hi"
