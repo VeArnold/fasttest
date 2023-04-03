@@ -5,6 +5,6 @@ workflows:
     environment:
       flutter:
         version: fvm
-        flavor: dev
+        flavor: staging
     scripts:
       - echo "hi"
