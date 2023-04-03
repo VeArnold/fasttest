@@ -3,6 +3,7 @@ workflows:
     name: def
     max_build_duration: 5
     environment:
-      flutter: beta
+      flutter:
+        version: fvm
     scripts:
       - echo "hi"
