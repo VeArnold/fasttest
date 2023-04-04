@@ -2,9 +2,6 @@ workflows:
   cat:
     name: def
     max_build_duration: 5
-    environment:
-      flutter:
-        version: fvm
-        flavor: meow
+    instance_type: linux
     scripts:
       - echo "hi"
