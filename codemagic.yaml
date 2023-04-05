@@ -4,7 +4,6 @@ workflows:
     max_build_duration: 5
     environment:
       flutter:
-        version: fvm
-        flavor: staging
+        version: beta
     scripts:
       - echo "hi"
