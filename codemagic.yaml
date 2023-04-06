@@ -3,8 +3,6 @@ workflows:
     name: def
     max_build_duration: 5
     environment:
-      flutter:
-        version: fvm
-        flavor: invalid
+      xcode: 14
     scripts:
       - echo "hi"
